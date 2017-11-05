@@ -1,0 +1,6 @@
+# Install DjangoCMS
+	$ pip install --upgrade virtualenv
+	$ virtualenv env
+	$ source env/bin/activate
+	(env) $ pip install djangocms-installer
+	(env) $ djangocms -f -p . -s sopds_site

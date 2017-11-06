@@ -1,0 +1,36 @@
+{% load menu_tags cms_menu_extras %}
+ 
+{% if children.0.level == 0 %}
+<div class="grid-y" style="height: 90px;"><div class="cell small-12">
+<header role="banner">
+<nav role="navigation">
+<ul>
+	{% for child in children %}
+	<li class="{% if child.selected %}selected{% endif %}">
+		<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">
+		<div>
+			{{ child.get_menu_title | splitmenu:0}}
+			<span>{{ child.get_menu_title | splitmenu:1}}</span>
+		</div>
+		</a>
+		<div><ul>
+			{% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+		</ul></div>
+	</li>
+	{% endfor %}
+</ul>
+</nav>
+</header>
+</div></div>  
+{% else %}
+	{% for child in children %}
+	<li class="child{% if child.selected %} is-active{% endif %}{% if child.ancestor %} ancestor{% endif %}{% if child.sibling %} sibling{% endif %}{% if child.descendant %} descendant{% endif %}">
+		<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}"><span>{{ child.get_menu_title }}</span></a>
+		{% if child.children %}
+		<ul>
+			{% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+		</ul>
+		{% endif %}
+	</li>
+	{% endfor %}
+{% endif %}

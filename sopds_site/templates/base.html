@@ -1,41 +1,32 @@
-{% load cms_tags menu_tags sekizai_tags %}
+{% load staticfiles cms_tags menu_tags sekizai_tags %}
 <!doctype html>
 <html>
     <head>
+    	<meta charset="UTF-8"/>
         <title>{% block title %}This is my new project home page{% endblock title %}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <style type="text/css">
-            .nav {
-                padding-left: 0;
-            }
-            .nav li {
-                display: inline;
-                list-style-type: none;
-                padding-right: 20px;
-            }
-            .container {
-                width: 940px;
-                margin: 0 auto
-            }
-            .content {
-                float: left;
-                width: 80%;
-            }
-            .sidebar {
-                float: left;
-                width: 20%;
-            }
+    	<link rel="stylesheet" type="text/css" href="{% static "css/app.css" %}">
+    	<link rel="stylesheet" type="text/css" href="{% static "css/menu1.css" %}">
+    	<link rel="stylesheet" type="text/css" href="{% static "foundation-icons/foundation-icons.css" %}">
         </style>
         {% render_block "css" %}
     </head>
+
     <body>
-        {% cms_toolbar %}
-        <div class="container">
-            <ul class="nav">
-                {% show_menu 0 100 100 100 %}
-            </ul>
-            {% block content %}{% endblock content %}
-        </div>
+        {% cms_toolbar %}	    
+	    {% show_menu 0 100 100 100 %}
+	  	<div class="grid-x">
+	  	</div>  
+	    <div class="grid-x">
+	    	<div class="cell small-12">{% block content %}{% endblock content %}</div>
+	  	</div>     
+     
+		<script src="{% static "js/jquery.min.js" %}"></script>
+	  	<script src="{% static "js/foundation.min.js" %}"></script>
+	
+	  	<script>
+	    	$(document).foundation();
+	    </script>        
         {% render_block "js" %}
     </body>
 </html>

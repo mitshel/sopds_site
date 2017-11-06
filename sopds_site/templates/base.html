@@ -10,13 +10,34 @@
     	<link rel="stylesheet" type="text/css" href="{% static "foundation-icons/foundation-icons.css" %}">
         </style>
         {% render_block "css" %}
+        
+        <!-- START MACHINA BLOCK -->
+	    {% block css %}
+	    {% endblock css %}
+	
+	    {% block extra_css %}
+	    {% endblock extra_css %}
+	     <!-- END MACHINA BLOCK -->
     </head>
 
     <body>
         {% cms_toolbar %}	    
 	    {% show_menu 0 100 100 100 %}
+	    
+	    <!-- START MACHINA BLOCK -->
 	  	<div class="grid-x">
-	  	</div>  
+		    {% block js %}
+		    {% endblock js %}
+		
+		    {% block body %}
+		      {# The forum content will go in this 'body' block #}
+		    {% endblock body %}
+		
+		    {% block extra_js %}
+		    {% endblock extra_js %}	  	
+		</div>  
+		<!-- END MACHINA BLOCK -->
+		
 	    <div class="grid-x">
 	    	<div class="cell small-12">{% block content %}{% endblock content %}</div>
 	  	</div>     

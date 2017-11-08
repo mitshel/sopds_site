@@ -3,7 +3,7 @@
 
 {% block sub_title %}{% if poster == request.user %}{% trans "My messages" %}{% else %}{% blocktrans with username=poster.username %}{{ username }}'s posts{% endblocktrans %}{% endif %}{% endblock sub_title %}
 
-{% block content %}
+{% block machina-content %}
 <div class="row">
   <div class="col-xs-12">
     <h1>{% if poster == request.user %}{% trans "My messages" %}{% else %}{% blocktrans with username=poster.username %}{{ username }}'s posts{% endblocktrans %}{% endif %}</h1>
@@ -81,4 +81,4 @@
     {% endwith %}
   </div>
 </div>
-{% endblock content %}
+{% endblock machina-content %}

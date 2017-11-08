@@ -17,7 +17,7 @@
 	{% endblock %}
 {% endif %}
 
-{% block content %}
+{% block machina-content %}
 	<form action="." method="post" id="{{ opts.model_name }}_pick_user_form" novalidate>{% csrf_token %}
 		<div>
 			{% if user_errors %}
@@ -122,4 +122,4 @@
             });
         })(django.jQuery);
     </script>
-{% endblock content %}
+{% endblock machina-content %}

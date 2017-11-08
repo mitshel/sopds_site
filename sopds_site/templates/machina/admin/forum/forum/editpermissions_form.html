@@ -23,7 +23,7 @@
 	{% endblock %}
 {% endif %}
 
-{% block content %}
+{% block machina-content %}
 	<form action="." method="post" id="permissions_form" novalidate>{% csrf_token %}
 		<div>
 			<fieldset class="module aligned {{ fieldset.classes }}">
@@ -63,4 +63,4 @@
 			<input type="submit" value="{% trans 'Save' %}" class="default" name="submit" />
 		</div>
 	</form>
-{% endblock content %}
+{% endblock machina-content %}

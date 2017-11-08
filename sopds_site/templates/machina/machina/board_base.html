@@ -15,9 +15,15 @@
 {% block header %}
 {% endblock header %}
 <div class="container" id="main_container">
+  
   <div class="row">
     <div class="col-xs-12">
       {% block breadcrumb %}{% include "partials/breadcrumb.html" %}{% endblock breadcrumb %}
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-12">
       <div class="pull-left controls-link-wrapper">
          <form class="navbar-form form-inline" role="search" action="{% url 'forum_search:search' %}">
           <div class="form-group col-sm-6 col-md-7">
@@ -45,14 +51,17 @@
       </div>
     </div>
   </div>
+
   <div class="row">
     <div class="col-xs-12">
       <br />
       {% block messages %}{% include "partials/messages.html" %}{% endblock messages %}
     </div>
   </div>
-  {% block content %}
-  {% endblock content %}
+
+  {% block machina-content %}
+  {% endblock machina-content %}
+
 </div>
 {% endblock body %}
 

@@ -1,3 +1,11 @@
-# Установка форума Django-machina
-## http://django-machina.readthedocs.io/en/latest/getting_started.html
+# РЈСЃС‚Р°РЅРѕРІРєР° DjangoCMS
+## https://www.django-cms.org/en/
+$ pip install --upgrade virtualenv
+$ virtualenv env
+$ source env/bin/activate
+(env) $ pip install djangocms-installer
+(env) $ djangocms mysite
 
+# РЈСЃС‚Р°РЅРѕРІРєР° С„РѕСЂСѓРјР° Django-machina
+## http://django-machina.readthedocs.io/en/latest/getting_started.html
+$ pip install django-machina

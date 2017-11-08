@@ -4,7 +4,7 @@
 
 {% block sub_title %}{% trans "Edit post" %}{% endblock sub_title %}
 
-{% block content %}
+{% block machina-content %}
     <div class="row">
         <div class="col-xs-12">
             <h1>{{ forum.name }}</h1>
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-{% endblock content %}
+{% endblock machina-content %}
 
 {% block onbodyload %}
     machina.poll.init();

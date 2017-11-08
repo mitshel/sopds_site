@@ -34,21 +34,13 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-
-
-
-
 ROOT_URLCONF = 'sopds_site.urls'
-
-
 
 WSGI_APPLICATION = 'sopds_site.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-
 
 
 # Internationalization
@@ -240,3 +232,13 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+# Django-registrations settings
+ACCOUNT_ACTIVATION_DAYS = 7
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = "mitshel@mail.ru"
+EMAIL_HOST_PASSWORD = "mail-gluck52"
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'mitshel@mail.ru'

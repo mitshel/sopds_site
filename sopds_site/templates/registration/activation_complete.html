@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid-x">
+	<div class="large-4 cell"></div>
+	<div class="large-4 cell">
+		<h1>Активация</h1>
+		Привет, {{ account }}!<br/>
+		Ваша учетная запись активирована. <a href="{% url auth_login %}">Заходите</a> на сайт.
+		<br/><br/>
+	</div>
+	<div class="large-4 cell"></div>
+</div>
+{% endblock %}

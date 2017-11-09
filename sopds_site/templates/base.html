@@ -7,49 +7,48 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         
         <!-- START MACHINA BLOCK -->
-	    {% block css %}
-	    {% endblock css %}
+	    {% block machina-css %}
+	    {% endblock machina-css %}
 	
-	    {% block extra_css %}
-	    {% endblock extra_css %}
+	    {% block machina-extra_css %}
+	    {% endblock machina-extra_css %}
 	     <!-- END MACHINA BLOCK -->
 
-    	<link rel="stylesheet" type="text/css" href="{% static "css/app.css" %}">
+    	<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.7/css/font-awesome.min.css" %}">
+    	<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.7/css/bootstrap.min.css" %}">
     	<link rel="stylesheet" type="text/css" href="{% static "css/menu1.css" %}">
     	<link rel="stylesheet" type="text/css" href="{% static "foundation-icons/foundation-icons.css" %}">
-        </style>
         {% render_block "css" %}
-        
     </head>
 
     <body>
-        {% cms_toolbar %}	    
-	    {% show_menu 0 100 100 100 %}
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-12">{% cms_toolbar %}</div>
+			<div class="col-12">{% show_menu 0 100 100 100 %}</div>
+		</div>
 	    
-	    <!-- START MACHINA BLOCK -->
-	  	<div class="grid-x">
-		    {% block js %}
-		    {% endblock js %}
-		
-		    {% block body %}
-		      {# The forum content will go in this 'body' block #}
-		    {% endblock body %}
-		
-		    {% block extra_js %}
-		    {% endblock extra_js %}	  	
+	    <!-- START MACHINA BLOCK --> 	
+	    {% block machina-js %}
+	    {% endblock machina-js %}
+		<div class="row">
+			<div class="col-12">
+				{% block body %}
+		  		{# The forum content will go in this 'body' block #}
+				{% endblock body %}
+			</div>
 		</div>  
+	    {% block machina-extra_js %}
+	    {% endblock machina-extra_js %}	  		
 		<!-- END MACHINA BLOCK -->
 		
-	    <div class="grid-x">
-	    	<div class="cell small-12">{% block content %}{% endblock content %}</div>
+	    <div class="row">
+	    	<div class="col-12">{% block content %}{% endblock content %}</div>
 	  	</div>     
      
-		<script src="{% static "js/jquery.min.js" %}"></script>
-	  	<script src="{% static "js/foundation.min.js" %}"></script>
-	
-	  	<script>
-	    	$(document).foundation();
-	    </script>        
-        {% render_block "js" %}
+		<!-- <script src="{% static "jquery/jquery.min.js" %}"></script> -->
+	  	<script src="{% static "bootstrap-3.3.7/js/bootstrap.min.js" %}"></script>     
+	</div>
+    {% render_block "js" %}
     </body>
 </html>
